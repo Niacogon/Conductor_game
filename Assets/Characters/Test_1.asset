@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4507b95c1df5e44b7e7b1538901e1a, type: 3}
   m_Name: Test_1
   m_EditorClassIdentifier: 
-  characterName: Char 1
-  gender: 0
-  age: 30
-  cityPasspor: Moscow
+  randomData: 1
+  characterName: "\u041F\u0435\u0442\u0440\u043E\u0432\u0430 \u0415\u043B\u0435\u043D\u0430"
+  gender: 1
+  age: 64
+  cityPasspor: "\u041C\u043E\u0441\u043A\u0432\u0430"
   pasportId: 00 00 000000
   pasportAvatar: {fileID: 21300000, guid: a27ece50ee2a0214dbcb3f94c2751ca7, type: 3}
   photo: {fileID: 0}

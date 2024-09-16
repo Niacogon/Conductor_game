@@ -45,7 +45,7 @@ namespace RJD.UI {
 				return;
 			}
 			//Установка диалога
-			characterName.SetText (currentDialog.character.name);
+			characterName.SetText (currentDialog.character.characterName);
 			dialogTxt.SetText (currentDialog.dialogText);
 			for (int _da = 0; _da < dialogAnswersBtn.Length; _da++) {
 				if (currentDialog.answersText [_da].answerText != "") {
@@ -58,8 +58,9 @@ namespace RJD.UI {
 				//Установка папорта
 				passport.SetActive (true);
 
-				characterPasName.SetText (currentDialog.character.name);
-				characterPasGender.SetText (currentDialog.character.gender.ToString ());
+				characterPasName.SetText (currentDialog.character.characterName);
+				string _genderName = currentDialog.character.gender == Character.GenderType.M ? "М" : "Ж";
+				characterPasGender.SetText (_genderName);
 				characterPasAge.SetText (currentDialog.character.age + " лет");
 				characterPasCity.SetText (currentDialog.character.cityPasspor);
 				characterPasID.SetText (currentDialog.character.pasportId);
@@ -67,7 +68,7 @@ namespace RJD.UI {
 				//Установка телефона
 				phone.SetActive (true);
 
-				phoneName.SetText (currentDialog.character.name);
+				phoneName.SetText (currentDialog.character.characterName);
 				phoneID.SetText (currentDialog.character.pasportId);
 			}
 		}

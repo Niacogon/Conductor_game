@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace RJD {
 	/// <summary>
@@ -7,6 +7,8 @@ namespace RJD {
 	/// </summary>
 	[CreateAssetMenu (menuName = "RJD/Character", order = 1)]
 	public class Character : ScriptableObject {
+		[FormerlySerializedAs ("randomName")]
+		public bool randomData = true;
 		public string characterName = "name";
 		public GenderType gender = GenderType.M;
 		public int age = 30;
