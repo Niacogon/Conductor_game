@@ -1,41 +1,22 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using NotImplementedException = System.NotImplementedException;
+using UnityEngine.AI;
 
 namespace RJD.System {
-	public class System_Move : MonoBehaviour,IPointerEnterHandler, IPointerClickHandler {
-		public GameObject character = null;
-		public float speed = 50;
+	public class System_Move : MonoBehaviour {
+		public NavMeshAgent agent = null;
 		
-		private RectTransform rect = null;
-		private GameObject moveTarget = null;
 		Vector3 movePosition = Vector3.zero;
 
 		private void Start () {
-			movePosition = character.transform.position;
-			rect = GetComponent <RectTransform> ();
+			movePosition = agent.transform.position;
 		}
 
-		private void Update () {
-			if (character.transform.position != movePosition) {
-				character.transform.position = Vector3.MoveTowards (character.transform.position, movePosition, Time.deltaTime * speed);
+		public void Update () {
+			if (Input.GetMouseButtonUp (0)) {
+				movePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				movePosition.y = agent.transform.position.y;
+				agent.SetDestination (movePosition);
 			}
-		}
-
-		public void OnPointerEnter (PointerEventData eventData) {
-			if (eventData.pointerEnter.layer != 7) return;
-			moveTarget = eventData.pointerEnter;
-		}
-
-		public void OnPointerClick (PointerEventData eventData) {
-			if (!moveTarget) return;
-
-			Vector2 _movePos;
-			RectTransformUtility.ScreenPointToLocalPointInRectangle (
-				rect, Input.mousePosition, Camera.main,
-				out _movePos);
-
-			movePosition = rect.transform.TransformPoint(_movePos);
 		}
 	}
 }
