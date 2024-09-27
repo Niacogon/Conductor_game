@@ -9,6 +9,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomCharacterData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/System_Item.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Inventory/UI_Inventory_Slot.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,6 +86,8 @@
       <workItem from="1726299458991" duration="36000" />
       <workItem from="1726491393330" duration="7645000" />
       <workItem from="1726929238518" duration="4996000" />
+      <workItem from="1727108509359" duration="3260000" />
+      <workItem from="1727436783459" duration="6867000" />
     </task>
     <servers />
   </component>
